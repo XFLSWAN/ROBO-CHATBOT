@@ -19,15 +19,15 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME","")
 UPDATE_CHNL = os.environ.get("UPDATE_CHNL","SHIVANSH474")
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME","SHIVANSHDEVS")
 SUPPORT_GRP = os.environ.get("SUPPORT_GRP","MASTIWITHFRIENDSXD")
-BOT_NAME = os.environ.get("BOT_NAME","CHATBOT")
+BOT_NAME = os.environ.get("BOT_NAME","RADHIKA")
 START_IMG = os.environ.get("START_IMG","")
 
-STKR = os.environ.get("STKR")
+STKR = os.environ.get("STKR","")
 
 
 StartTime = time.time()
 Mukesh = Client(
-    "chat-gpt" ,
+    "chat-bot" ,
     api_id = API_ID,
     api_hash = API_HASH ,
     bot_token = BOT_TOKEN
@@ -46,7 +46,7 @@ SOURCE_TEXT = f"""
 ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ᴛʜᴇ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ**
 """
 SOURCE_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='hurr')], [InlineKeyboardButton(" ꜱᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GRP}"), InlineKeyboardButton(text="ʙᴀᴄᴋ ", callback_data="HELP_BACK")]])
-SOURCE = 'https://te.legra.ph/file/ebc3fc421b8776e29ad98.mp4'
+SOURCE = 'https://github.com/itzshukla/STRANGER-CHATBOT'
 x=["❤️","🎉","✨","🪸","🎉","🎈","🎯"]
 g=choice(x)
 async def is_admins(chat_id: int):
@@ -92,7 +92,7 @@ PNG_BTN = [
 
 HELP_READ = "**ᴜsᴀɢᴇ ☟︎︎︎**\n**➻ ᴜsᴇ** `/chatbot on` **ᴛᴏ ᴇɴᴀʙʟᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**➻ ᴜsᴇ** `/chatbot off` **ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʜᴇ ᴄʜᴀᴛʙᴏᴛ.**\n**๏ ɴᴏᴛᴇ ➻ ʙᴏᴛʜ ᴛʜᴇ ᴀʙᴏᴠᴇ ᴄᴏᴍᴍᴀɴᴅs ғᴏʀ ᴄʜᴀᴛ-ʙᴏᴛ ᴏɴ/ᴏғғ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!!**\n\n**➻ ᴜsᴇ** `/ping` **ᴛᴏ ᴄʜᴇᴄᴋ ᴛʜᴇ ᴘɪɴɢ ᴏғ ᴛʜᴇ ʙᴏᴛ.**\n||©️ @SHIVANSHDEVS||"
 HELP_BACK = [
-     
+
     [
            InlineKeyboardButton(text="ʙᴀᴄᴋ ", callback_data="HELP_BACK"),
     ]
@@ -126,7 +126,7 @@ async def must_join_channel(bot: Client, msg: Message):
                 pass
     except ChatAdminRequired:
         print(f"Promote me as an admin in the UPDATE CHANNEL  : {UPDATE_CHNL} !")
-@Mukesh.on_message(filters.command(["cstart",f"cstart@{BOT_USERNAME}"]))
+@Mukesh.on_message(filters.command(["start",f"start@{BOT_USERNAME}"]))
 async def restart(client, m: Message):
         accha = await m.reply_text(
                         text = f"{g}")
@@ -162,18 +162,18 @@ async def cb_handler(Client, query: CallbackQuery):
         await query.message.edit_text(SOURCE_TEXT, reply_markup=SOURCE_BUTTONS)
     elif query.data == 'hurr':
         await query.answer()
-        await query.message.reply(SOURCE)
-@Mukesh.on_message(filters.command(["chelp", f"chelp@{BOT_USERNAME}"], prefixes=["/"]))
+        await query.message.edit_text(SOURCE)
+@Mukesh.on_message(filters.command(["chelp", f"help@{BOT_USERNAME}"], prefixes=["","+", ".", "/", "-", "?", "$"]))
 async def restart(client, message):
     hmm = await message.reply_photo(START_IMG,
                              caption= HELP_READ,
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
-@Mukesh.on_message(filters.command(['csource', 'crepo']))
+@Mukesh.on_message(filters.command(['source', 'crepo']))
 async def source(bot, m):
     await m.reply_photo(START_IMG, caption=SOURCE_TEXT, reply_markup=SOURCE_BUTTONS, reply_to_message_id=m.id)
 #  alive
-@Mukesh.on_message(filters.command(["cping","calive"], prefixes=["/"]))
+@Mukesh.on_message(filters.command(["cping","alive"], prefixes=["","+", "/", "-", "?", "$", "&","."]))
 async def ping(client, message: Message):
         start = datetime.now()
         t = "__ριиgιиg...__"
@@ -186,12 +186,12 @@ async def ping(client, message: Message):
         ms = (end-start).microseconds / 1000
         await message.reply_photo(
                              photo=START_IMG,
-                             caption=f"ʜᴇʏ ʙᴀʙʏ!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ɪꜱ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ᴡᴏʀᴋɪɴɢ ꜰɪɴᴇ ᴡɪᴛʜ ᴘᴏɴɢ ᴏꜰ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [SHIVANSH](https://t.me/SHIVANSHDEVS)||**",
+                             caption=f"ʜᴇʏ ʙᴀʙʏ!!\n**[{BOT_NAME}](t.me/{BOT_USERNAME})** ɪꜱ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ᴡᴏʀᴋɪɴɢ ꜰɪɴᴇ ᴡɪᴛʜ ᴘᴏɴɢ ᴏꜰ \n➥ `{ms}` ms\n\n**ᴍᴀᴅᴇ ᴡɪᴛʜ ❣️ ʙʏ || [sʜɪᴠᴀɴsʜ](https://t.me/SHIVANSHDEVS)||**",
                              reply_markup=InlineKeyboardMarkup(PNG_BTN),
        )
 
 @Mukesh.on_message(
-    filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/"])
+    filters.command(["chatbot off", f"chatbot@{BOT_USERNAME} off"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbotofd(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -211,10 +211,10 @@ async def chatbotofd(client, message):
         await message.reply_text(f"Chatbot Disabled!")
     if is_vick:
         await message.reply_text(f"ChatBot Already Disabled")
-    
+
 
 @Mukesh.on_message(
-    filters.command(["chatbot on", f"chatbot@{BOT_USERNAME} on"] ,prefixes=["/"])
+    filters.command(["chatbot on", f"chatbot@{BOT_USERNAME} on"] ,prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatboton(client, message):
     vickdb = MongoClient(MONGO_URL)    
@@ -234,10 +234,10 @@ async def chatboton(client, message):
     if is_vick:
         vick.delete_one({"chat_id": message.chat.id})
         await message.reply_text(f"ChatBot Enabled!")
-    
+
 
 @Mukesh.on_message(
-    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/"])
+    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def chatbot(client, message):
     await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!**")
@@ -275,7 +275,7 @@ async def vickai(client: Client, message: Message):
                    await message.reply_sticker(f"{hey}")
                if not Yo == "sticker":
                    await message.reply_text(f"{hey}")
-   
+
    if message.reply_to_message:  
        vickdb = MongoClient(MONGO_URL)
        vick = vickdb["VickDb"]["Vick"] 
@@ -307,7 +307,7 @@ async def vickai(client: Client, message: Message):
                is_chat = chatai.find_one({"word": message.reply_to_message.text, "text": message.text})                 
                if not is_chat:
                    chatai.insert_one({"word": message.reply_to_message.text, "text": message.text, "check": "none"})    
-               
+
 
 @Mukesh.on_message(
  (
@@ -341,7 +341,7 @@ async def vickstickerai(client: Client, message: Message):
                    await message.reply_text(f"{hey}")
                if not Yo == "text":
                    await message.reply_sticker(f"{hey}")
-   
+
    if message.reply_to_message:
        vickdb = MongoClient(MONGO_URL)
        vick = vickdb["VickDb"]["Vick"] 
@@ -373,7 +373,7 @@ async def vickstickerai(client: Client, message: Message):
                is_chat = chatai.find_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id})                 
                if not is_chat:
                    chatai.insert_one({"word": message.reply_to_message.sticker.file_unique_id, "text": message.sticker.file_id, "check": "none"})    
-               
+
 
 
 @Mukesh.on_message(
@@ -417,7 +417,7 @@ async def vickprivate(client: Client, message: Message):
                await message.reply_sticker(f"{hey}")
            if not Yo == "sticker":
                await message.reply_text(f"{hey}")
-       
+
 
 @Mukesh.on_message(
  (
@@ -461,5 +461,5 @@ async def vickprivatesticker(client: Client, message: Message):
            if not Yo == "text":
                await message.reply_sticker(f"{hey}")
 
-print(f"{BOT_NAME} ɪs ᴀʟɪᴠᴇ!")      
+print(f"{BOT_NAME} ɪs ᴀʟɪᴠᴇ! ʙᴏᴛ ʙʏ sʜɪᴠᴀɴsʜ")      
 Mukesh.run()
