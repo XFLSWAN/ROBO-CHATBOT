@@ -1,6 +1,7 @@
-pyrogram
+#pyrogram
 pymongo
 requests
 dnspython
 tgcrypto==1.2.2
 asyncio
+git+https://github.com/KurimuzonAkuma/pyrogram
