@@ -2,7 +2,6 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 from pymongo import MongoClient
 from pyrogram.enums import ChatAction
-from pyrogram.filters import ChatMemberFilter
 import requests
 import random
 from random import choice
